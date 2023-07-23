@@ -128,11 +128,12 @@ export PATH="$PATH:$GOPATH"
 alias py="pyenv exec python"
 # Reload Zsh profile
 alias rz="source ~/.zshrc"
+# Open Visual Studio Code
+alias c="code ."
 # Open zsh profile in vim
 alias ez="vim ~/.zshrc"
 alias kc="kubectl"
 alias tf="terraform"
-alias c="clear"
 
 # Kubernetes related aliases and variables
 alias k=kubectl
