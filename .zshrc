@@ -139,3 +139,14 @@ alias tf="terraform"
 alias k=kubectl
 export do='--dry-run=clienti -o yaml'
 export now="--force --grace-period 0"
+
+function sp() {
+    export AWS_PROFILE=$1
+}
+
+function lp() {
+    aws sso login --profile=$1
+    sp $1
+}
+
+alias gci="aws sts get-caller-identity"
