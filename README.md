@@ -17,7 +17,7 @@ set containing your OpenAI API key called `OPENAI_API_KEY`.
   See https://github.com/Thomas-McKanna/pyhowdoi.
 - `chatgpt-pre-commit-hooks`: a pre-commit hook to automatically generate a commit
   message based on the Git diff. See
-  `https://github.com/DariuszPorowski/chatgpt-pre-commit-hooks#-hooks` for setup
+  https://github.com/DariuszPorowski/chatgpt-pre-commit-hooks#-hooks for setup
   instructions.
 
 ## Dotfiles
