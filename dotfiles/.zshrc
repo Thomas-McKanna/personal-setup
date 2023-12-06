@@ -134,6 +134,9 @@ alias c="code ."
 alias ez="vim ~/.zshrc"
 alias kc="kubectl"
 alias tf="terraform"
+alias ga="git add ."
+alias gc="git commit"
+alias gac="git add . && git commit"
 
 # Kubernetes related aliases and variables
 alias k=kubectl
