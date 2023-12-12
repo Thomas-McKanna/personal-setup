@@ -127,7 +127,7 @@ export PATH="$PATH:$GOPATH"
 # Run Python
 alias py="pyenv exec python"
 # Reload Zsh profile
-alias rz="source ~/.zshrc"
+alias rz="omz reload"
 # Open Visual Studio Code
 alias c="code ."
 # Open zsh profile in vim
