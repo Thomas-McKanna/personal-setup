@@ -1,0 +1,53 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.inlineSuggest.enabled": true,
+    "window.zoomLevel": 2,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.rulers": [
+        88
+    ],
+    "git.openRepositoryInParentFolders": "always",
+    "editor.formatOnSave": true,
+    // Use Biome as the default formatter for JavaScript/TypeScript
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.codeActionsOnSave": {
+            "quickfix.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+        }
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.codeActionsOnSave": {
+            "quickfix.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+        }
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.codeActionsOnSave": {
+            "quickfix.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+        }
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.codeActionsOnSave": {
+            "quickfix.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+        }
+    },
+    // Auto-fix with Biome on save
+    "editor.codeActionsOnSave": {
+        "quickfix.biome": "explicit",
+        "source.organizeImports.biome": "explicit"
+    },
+    // Enable auto-formatting for JSON files
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // JSON with comments
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}
