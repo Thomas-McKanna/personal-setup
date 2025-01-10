@@ -114,29 +114,25 @@ source $ZSH/oh-my-zsh.sh
 # Manual Additions
 #########################################################################
 
-function venv {
-    if [[ ! -d venv ]]; then
-        py -m venv venv
-    fi
-    source venv/bin/activate
-}
-
 export GOPATH="$HOME/go/bin"
 export PATH="$PATH:$GOPATH"
 
-# Run Python
-alias py="pyenv exec python"
-# Reload Zsh profile
-alias rz="omz reload"
-# Open Visual Studio Code
-alias c="code ."
-# Open zsh profile in vim
+alias sb="sam build"
+alias sd="sam deploy"
+alias v="source venv/bin/activate"
+alias d="deactivate"
+alias rz="omz reload" # Reload Zsh profile
+alias c="code ." # VS Code
 alias ez="vim ~/.zshrc"
 alias kc="kubectl"
 alias tf="terraform"
 alias ga="git add ."
 alias gc="git commit"
 alias gac="git add . && git commit"
+alias px="chmod +x"
+alias gci="aws sts get-caller-identity"
+alias myip="curl -s -4 http://ifconfig.me | pbcopy; echo 'IP copied to clipboard'"
+alias git-clone-personal="git clone git@github.com:Thomas-McKanna/$1.git"
 
 # Kubernetes related aliases and variables
 alias k=kubectl
@@ -152,4 +148,15 @@ function lp() {
     sp $1
 }
 
-alias gci="aws sts get-caller-identity"
+function s() {
+    default_region=$(aws configure get region)
+    region=${1:-$default_region}
+    sam build && sam deploy --no-confirm-changeset --region=${region}
+}
+
+function venv {
+    if [[ ! -d venv ]]; then
+        py -m venv venv
+    fi
+    source venv/bin/activate
+}
