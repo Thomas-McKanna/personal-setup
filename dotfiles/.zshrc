@@ -119,7 +119,6 @@ export PATH="$PATH:$GOPATH"
 
 alias sb="sam build"
 alias sd="sam deploy"
-alias v="source venv/bin/activate"
 alias d="deactivate"
 alias rz="omz reload" # Reload Zsh profile
 alias c="code ." # VS Code
@@ -154,9 +153,10 @@ function s() {
     sam build && sam deploy --no-confirm-changeset --region=${region}
 }
 
-function venv {
+function v {
     if [[ ! -d venv ]]; then
         py -m venv venv
     fi
     source venv/bin/activate
 }
+
