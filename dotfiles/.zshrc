@@ -117,6 +117,10 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH="$HOME/go/bin"
 export PATH="$PATH:$GOPATH"
 
+# Needed for Ansible to work on MacOS
+# See https://github.com/ansible/ansible/issues/32499
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 alias sb="sam build"
 alias sd="sam deploy"
 alias d="deactivate"
