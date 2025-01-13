@@ -157,7 +157,7 @@ function s() {
 }
 
 # Open VS Code with fuzzy search
-c () {
+function c () {
     code "$(zoxide query $1)"
 }
 
