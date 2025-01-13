@@ -125,7 +125,6 @@ alias sb="sam build"
 alias sd="sam deploy"
 alias d="deactivate"
 alias rz="omz reload" # Reload Zsh profile
-alias c="code ." # VS Code
 alias ez="vim ~/.zshrc"
 alias kc="kubectl"
 alias tf="terraform"
@@ -155,6 +154,11 @@ function s() {
     default_region=$(aws configure get region)
     region=${1:-$default_region}
     sam build && sam deploy --no-confirm-changeset --region=${region}
+}
+
+# Open VS Code with fuzzy search
+c () {
+    code "$(zoxide query $1)"
 }
 
 function v {
