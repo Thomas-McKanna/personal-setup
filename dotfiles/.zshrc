@@ -156,9 +156,13 @@ function s() {
     sam build && sam deploy --no-confirm-changeset --region=${region}
 }
 
-# Open VS Code with fuzzy search
+# Open VS Code
 function c () {
-    code "$(zoxide query $1)"
+    if [ -z "$1" ]; then
+        code .
+    else
+        code "$(zoxide query $1)"
+    fi
 }
 
 function v {
