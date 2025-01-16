@@ -121,6 +121,9 @@ export PATH="$PATH:$GOPATH"
 # See https://github.com/ansible/ansible/issues/32499
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
+# Needed for enabling symlinks in Terragrunt
+export TERRAGRUNT_EXPERIMENT_MODE=true
+
 alias sb="sam build"
 alias sd="sam deploy"
 alias d="deactivate"
