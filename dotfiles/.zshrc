@@ -176,3 +176,46 @@ function v {
     source venv/bin/activate
 }
 
+# Function to load Aider with a local model. Prompts user to select a model from
+# LM Studio dynamically.
+function alms {
+    # Query the list of models from the localhost endpoint
+    response=$(curl -s http://127.0.0.1:1234/v1/models/)
+
+    # Check if the response is empty or there's an error
+    if [[ -z "$response" ]]; then
+        echo "Error: Unable to fetch models from localhost:1234."
+        return 1
+    fi
+
+    # Parse the JSON response to extract model IDs
+    models=("${(@f)$(echo "$response" | jq -r '.data[].id')}")
+    if [[ ${#models[@]} -eq 0 ]]; then
+        echo "No models found in the response."
+        return 1
+    fi
+
+    # Display the models as a numbered list
+    echo "Available models:"
+    integer i
+    for ((i=1; i<=${#models[@]}; i++)); do
+        echo "$i. ${models[$i]}"
+    done
+
+    # Prompt the user to select a model
+    echo -n "Select a model (1-${#models[@]}): "
+    read -r selection
+
+    # Validate the user's selection
+    if ! [[ "$selection" =~ ^[0-9]+$ ]] || (( selection < 1 || selection > ${#models[@]} )); then
+        echo "Invalid selection. Please choose a number between 1 and ${#models[@]}."
+        return 1
+    fi
+
+    # Get the selected model
+    selected_model=${models[$((selection - 1))]}
+
+    # Pass the selected model to the `a` alias
+    a --model "lm_studio/$selected_model" --no-show-model-warnings
+}
+
