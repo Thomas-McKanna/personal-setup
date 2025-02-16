@@ -139,6 +139,7 @@ alias gci="aws sts get-caller-identity"
 alias myip="curl -s -4 http://ifconfig.me | pbcopy; echo 'IP copied to clipboard'"
 alias git-clone-personal="git clone git@github.com:Thomas-McKanna/$1.git"
 alias tf_wipe_local_files='find . \( -name ".terraform" -o -name ".terraform.lock.hcl" -o -name "backend.tf" -o -name "provider.tf" -o -name ".terragrunt-cache" \) -exec rm -rf {} +'
+alias cat='bat --paging=never'
 
 # Kubernetes related aliases and variables
 alias k=kubectl
